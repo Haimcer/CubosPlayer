@@ -1,0 +1,34 @@
+
+.album{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;  
+    padding-left: 2vw;
+}
+
+.titulo{
+    color: white;
+    font-family: 'Rubik' sans-serif;
+    font-size: 0.9vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0.2vw;
+    margin-bottom: 0.2vw;
+}
+
+.capa {
+    height: 30vh;
+    width: 15vw;
+}
+
+.descricao{
+    width: 15vw;
+    color: #CCC3C3;
+    text-align: justify;
+    font-family: 'Rubik' sans-serif;
+    font-size: 0.8vw;
+    font-style: normal;
+    font-weight: 400;
+}
