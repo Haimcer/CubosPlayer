@@ -105,41 +105,11 @@ footer{
     flex-direction: row;
     justify-content: space-between;
 }
-.musica{
-    margin-top: 2vh;
-    color: white;
-    font-family:'Roboto', sans-serif;
-    font-size: 1.3vw;
-    font-style: normal;
-    font-weight: 700;
-}
-.autor{
-    margin-top: 1vh;
-    color: white;
-    font-family:'Roboto', sans-serif;
-    font-size: 0.9vw;
-    font-style: normal;
-    font-weight: 700;
+
+.alinhamento{
+    margin-left: 30vw;
 }
 
-.controlesMusica{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.botoes{
-    width: 3vw;
-    height: 5vh;
-    margin-right: 2vw;
-}
-
-.playStop{
-    margin-right: 2vw;
-    height: 8vh;
-    
-}
 
 .interface{
     display: flex;

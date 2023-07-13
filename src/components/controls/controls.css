@@ -1,0 +1,51 @@
+.controlesMusica{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+}
+
+.botoes{
+    width: 3vw;
+    height: 5vh;
+}
+
+.botoes:hover{
+    scale: 1.2;
+}
+
+.optionButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.playStop{
+    
+    height: 8vh;
+    
+}
+
+.playStop:hover{
+    scale: 1.2;
+    filter: invert(27%) sepia(0%) saturate(2000%) hue-rotate(346deg) brightness(70%) contrast(350%);
+
+}
+
+.musica{
+    margin-top: 2vh;
+    color: white;
+    font-family:'Roboto', sans-serif;
+    font-size: 1.3vw;
+    font-style: normal;
+    font-weight: 700;
+}
+.autor{
+    margin-top: 1vh;
+    color: white;
+    font-family:'Roboto', sans-serif;
+    font-size: 0.9vw;
+    font-style: normal;
+    font-weight: 700;
+}

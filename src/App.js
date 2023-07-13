@@ -1,16 +1,21 @@
 import './App.css';
+import './musics';
 import Logo from './assets/logo.svg';
 import Profile from './assets/profile.jpg';
-import Next from './assets/next.svg';
-import Pause from './assets/pause.svg';
-import Play from './assets/play.svg';
-import Stop from './assets/stop.svg';
-import Previous from './assets/previous.svg';
-import Card from './components/card'
+import Card from './components/card/card'
+import { musics } from './musics';
+import Controls from './components/controls/controls';
+import { useRef } from 'react';
+import { useState } from "react"; 
 
 
 
-function App() {
+function App({nomeMusica, nomeAutor}) {
+  const [nome, setNome] = useState(nomeMusica);
+  const [autor, setAutor] = useState(nomeAutor);
+  const audioRef = useRef(0);
+  console.log(nome)
+  console.log('aasdsa')
   return (
     <div className="background">
     <header className='header'>
@@ -29,27 +34,28 @@ function App() {
       </section>
    
     <main className='main'>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        {
+          musics.map((music)=> <Card
+          key={music.id}
+          title={music.title}
+          cover={music.cover}
+          description={music.description}         
+          />,
+          )
+        }
+      
     </main>
     </body>
     <footer>
-      <div className='sombra'></div>
       <div className='controle'>
-        <div className='informacoesMusica'>
-         <div className='musica'>Violão Acústico</div>
-         <div className='autor'>Robert Mayer</div>
-        </div>
+        
         <div className='interface'>
-          <div className='controlesMusica'>
-          <img className='botoes' src={Stop} alt="foto de perfil"/>
-          <img className='botoes' src={Previous} alt="foto de perfil"/>
-          <img className='playStop' src={Play} alt="foto de perfil"/>
-          <img className='botoes' src={Next} alt="foto de perfil"/>
-          </div>
+         <Controls
+         audioRef={audioRef}
+         musica={musics}
+         />
           <div className='indicator'>
+          <div className='alinhamento'></div>
             <div>0</div>
           <div className='barraProgresso'></div>
           <div>3.34</div>
@@ -57,7 +63,6 @@ function App() {
           </div>
          
         </div>
-        <div className='alinhamento'></div>
       </div>
     </footer>
     </div>
