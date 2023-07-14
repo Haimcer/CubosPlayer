@@ -34,12 +34,17 @@
 }
 
 .album:hover{
-    scale: 1.06;
+    scale: 1.02;
 }
-
-.album:focus{
+.albumisSelect{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    scale: 1.08;
+}
+/* .album:focus{
     scale: 1.2;
-}
+} */
 
 button{
     background-color: transparent;

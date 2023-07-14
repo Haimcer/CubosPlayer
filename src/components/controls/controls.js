@@ -8,16 +8,19 @@ import './controls.css';
 
 
 
-export default function Controls({ audioRef, songs, currentSong, isPlaying, setIsPlaying, setCurrentSong  }) {
+export default function Controls({ audioRef, songs, currentSong, isPlaying, setIsPlaying, setCurrentSong,isCard, setIsCard, setCurrentIndex  }) {
 
      let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
+     
 
 
     const playPause = () => {
 		if (isPlaying) {
+      setIsCard(!isCard)
 			audioRef.current.pause();
 			setIsPlaying(!isPlaying);
 		} else {
+      setIsCard(!isCard)
 			audioRef.current.play();
 			setIsPlaying(!isPlaying);
 		}
@@ -37,7 +40,10 @@ export default function Controls({ audioRef, songs, currentSong, isPlaying, setI
     }
   
     function botaoStop() {
+
+      setCurrentSong(songs[0])
       
+      isPlaying ? setIsCard(!isCard) : setIsCard(isCard);
        isPlaying ? setIsPlaying(!isPlaying) : setIsPlaying(isPlaying);
       
      
@@ -47,24 +53,29 @@ export default function Controls({ audioRef, songs, currentSong, isPlaying, setI
 
    async function botaoNext() {
 
-       
+  
        await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
-       isPlaying ? setIsPlaying(isPlaying) : setIsPlaying(!isPlaying);
-       setPlay();
+      //  isPlaying ? setIsPlaying(isPlaying) : setIsPlaying(!isPlaying);
+
        console.log(currentSong.url)
        console.log(currentSong.title)
        console.log(currentSong.artist)
+       if(isPlaying){
+        setPlay()
+      }
       }
 
       async function botaoReturn() {
-        
+       
         if ((currentIndex - 1) % songs.length === -1) {
             await setCurrentSong(songs[songs.length - 1]);
         } else {
             await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
         } 
-        isPlaying ? setIsPlaying(isPlaying) : setIsPlaying(!isPlaying);
-        setPlay();
+        if(isPlaying){
+          setPlay()
+        }
+        // isPlaying ? setIsPlaying(isPlaying) : setIsPlaying(!isPlaying);
           }
   
        
@@ -72,8 +83,8 @@ export default function Controls({ audioRef, songs, currentSong, isPlaying, setI
         
         <div className='controlesMusica'>
         <div className='informacoesMusica'>
-        <div className='musica'>{currentSong.title}</div>
-        <div className='autor'>{currentSong.artist}</div>
+        <div className='musica'>{!isPlaying ? '' : currentSong.title }</div>
+        <div className='autor'>{!isPlaying ? '' : currentSong.artist }</div>
         </div>
         <audio src={currentSong.url} ref={audioRef} />
         <div className = 'optionButtons'>
