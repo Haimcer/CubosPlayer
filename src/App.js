@@ -10,12 +10,14 @@ import { useState } from "react";
 
 
 
-function App({nomeMusica, nomeAutor}) {
-  const [nome, setNome] = useState(nomeMusica);
-  const [autor, setAutor] = useState(nomeAutor);
-  const audioRef = useRef(0);
-  console.log(nome)
-  console.log('aasdsa')
+function App() {
+  
+  const [songs] = useState(musics);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const audioRef = useRef(null);
+
   return (
     <div className="background">
     <header className='header'>
@@ -36,10 +38,16 @@ function App({nomeMusica, nomeAutor}) {
     <main className='main'>
         {
           musics.map((music)=> <Card
+          id={music.id}
           key={music.id}
           title={music.title}
           cover={music.cover}
-          description={music.description}         
+          description={music.description}
+          setCurrentSong={setCurrentSong} 
+          currentSong={currentSong}
+          songs={songs}
+          setIsPlaying={setIsPlaying}
+          isPlaying={isPlaying}   
           />,
           )
         }
@@ -53,12 +61,17 @@ function App({nomeMusica, nomeAutor}) {
          <Controls
          audioRef={audioRef}
          musica={musics}
+         setCurrentSong={setCurrentSong}   
+         songs={songs}
+         isPlaying={isPlaying}
+         setIsPlaying={setIsPlaying}
+         currentSong={currentSong}  
          />
           <div className='indicator'>
           <div className='alinhamento'></div>
             <div>0</div>
           <div className='barraProgresso'></div>
-          <div>3.34</div>
+          <div>{musics[0].url.duration}</div>
 
           </div>
          

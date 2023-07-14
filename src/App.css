@@ -3,6 +3,7 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-image: linear-gradient(to bottom, #0C0505, #3A3535, #5E5858);
 }
 
@@ -95,7 +96,7 @@ footer{
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, #0C0505, #3A3535, #5E5858);
+    background-image: linear-gradient(to bottom, #3A3535, #5E5858, #6c6464);
 }
 
 .controle{
@@ -124,7 +125,6 @@ footer{
 }
 
 .barraProgresso{
-    margin-top: 1.5vh;
     width: 40vw;
     height: 3px;
     background-color: white;

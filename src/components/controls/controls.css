@@ -22,14 +22,16 @@
     align-items: center;
 }
 .playStop{
-    
     height: 8vh;
-    
+}
+
+.stop{
+    scale: 1.2;
+    filter: invert(27%) sepia(0%) saturate(2000%) hue-rotate(346deg) brightness(70%) contrast(350%);
 }
 
 .playStop:hover{
     scale: 1.2;
-    filter: invert(27%) sepia(0%) saturate(2000%) hue-rotate(346deg) brightness(70%) contrast(350%);
 
 }
 
