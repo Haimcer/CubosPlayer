@@ -71,7 +71,7 @@ function App() {
         <main className='main'>
           {
             musics.map((music) => <Card
-
+              audioRef={audioRef}
               id={music.id}
               key={music.id}
               title={music.title}

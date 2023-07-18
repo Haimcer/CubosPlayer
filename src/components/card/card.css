@@ -42,9 +42,10 @@
     align-items: start;
     scale: 1.08;
 }
-/* .album:focus{
-    scale: 1.2;
+ /* .album:focus{
+    scale: 1.08;
 } */
+
 
 button{
     background-color: transparent;
