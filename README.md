@@ -3,7 +3,7 @@
 # React - Cubos Player
 
 
-"O Cubos Player: A maneira simples de curtir suas músicas favoritas! 🎧🔷
+O Cubos Player: A maneira simples de curtir suas músicas favoritas! 🎧🔷
 
 🎵 Ouça suas músicas preferidas em poucos cliques. O Cubos Player possui uma interface descomplicada e fácil de usar, garantindo uma experiência musical sem complicações.
 
@@ -11,7 +11,7 @@
 
 🚀 Descubra novos sons. Navegue por uma biblioteca diversificada e encontre novas músicas para ampliar seus horizontes musicais.
 
-Curta suas músicas sem complicação com o Cubos Player. 🎶🎉"
+Curta suas músicas sem complicação com o Cubos Player. 🎶🎉
 
 ![](https://i.imgur.com/kU1nrcS.png)
 
